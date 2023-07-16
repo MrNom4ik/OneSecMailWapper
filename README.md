@@ -16,10 +16,6 @@ domians: List[str] = get_domians()
 ```  
 ### Get specific mailbox  
 ```python  
-mailbox: MailBox = get_mailbox("0ad1ekwui8@qiott.com")  
-```  
-or  
-```python  
 mailbox: MailBox = get_mailbox("0ad1ekwui8", "qiott.com")  
 ```  
 ### Get random mailbox  

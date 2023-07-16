@@ -54,7 +54,10 @@ class Mailbox(BaseModel):
         :rtype: List[Mail]
         """
 
-        return [*map(ShortMail.get_full, self.get_mails())]
+        mails = []
+        for mail in self.get_mails():
+            mails.append(mail.get_full())
+        return mails
 
     def wait_mail(self,
                   handler: Callable[["ShortMail"], bool],

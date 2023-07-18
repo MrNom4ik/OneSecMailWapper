@@ -5,22 +5,22 @@ OneSecMailWapper - sync wapper over https://www.1secmail.com API temporary mail 
 ```bash
 python setup.py install
 ```
-# Examples  
+# Examples
 ```py  
-from OneSecMailWapper import get_domians, get_mailbox, get_random_mailbox, MailBox, Mail, ShortMail, Attachment  
+from OneSecMailWapper import get_domians, get_mailbox, get_random_mailbox, Mailbox, Mail, ShortMail, Attachment  
 ```  
-## MailBox  
+## Mailbox  
 ### Get domians  
 ```python  
 domians: List[str] = get_domians()  
 ```  
 ### Get specific mailbox  
 ```python  
-mailbox: MailBox = get_mailbox("0ad1ekwui8", "qiott.com")  
+mailbox: Mailbox = get_mailbox("0ad1ekwui8", "qiott.com")  
 ```  
 ### Get random mailbox  
 ```python  
-mailbox: MailBox = get_random_mailbox()  
+mailbox: Mailbox = get_random_mailbox()  
 ```  
   
 ## Mails  
@@ -49,7 +49,7 @@ textBody: str
 htmlBody: str  
 ```  
 ### Get mails  
-You can get all mails (in short form) with [MailBox.get_mails()](https://github.com/MrNom4ik/OneSecMailWapper/blob/master/OneSecMailWapper/mailbox.py#L40):  
+You can get all mails (in short form) with [Mailbox.get_mails()](https://github.com/MrNom4ik/OneSecMailWapper/blob/master/OneSecMailWapper/mailbox.py#L40):  
 ```python  
 short_mails: List[ShortMail] = mailbox.get_mails()  
 ```  
@@ -60,15 +60,15 @@ short_mail: ShortMail = mailbox.get_mails()[0]
 mail: Mail = short_mail.get_full()  
 ```  
   
-To get all mails at once in the full version, you can use [MailBox.get_mails_full()](https://github.com/MrNom4ik/OneSecMailWapper/blob/master/OneSecMailWapper/mailbox.py#L51):  
+To get all mails at once in the full version, you can use [Mailbox.get_mails_full()](https://github.com/MrNom4ik/OneSecMailWapper/blob/master/OneSecMailWapper/mailbox.py#L51):  
 ```python  
 mails: List[Mail] = mailbox.get_mails_full()  
 ```  
 ### Wait mail  
-If you need to receive an mail that is due soon, you can use [MailBox.wait_mail()](https://github.com/MrNom4ik/OneSecMailWapper/blob/master/OneSecMailWapper/mailbox.py#L59):  
+If you need to receive an mail that is due soon, you can use [Mailbox.wait_mail()](https://github.com/MrNom4ik/OneSecMailWapper/blob/master/OneSecMailWapper/mailbox.py#L59):  
 ```python  
 def check(mail: ShortMail) -> bool:  
-return mail.from_adress == "example@example.com"  
+    return mail.from_adress == "example@example.com"  
   
 shot_mail: ShortMail = mailbox.wait_mail(check)  
 mail: Mail = shot_mail.get_full()  

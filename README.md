@@ -49,7 +49,7 @@ mails: List[Mail] = mailbox.get_mails()
 If you need to receive an mail that is due soon, you can use [Mailbox.wait_mail()](https://github.com/MrNom4ik/OneSecMailWapper/blob/main/OneSecMailWapper/mailbox.py#L56):
 ```python
 def check(mail: Mail) -> bool:
-	return mail.from_adress == "example@example.com"
+    return mail.from_adress == "example@example.com"
 
 mail: Mail = mailbox.wait_mail(check)
 print(mail.body)
@@ -67,5 +67,5 @@ size: int
 You can get the content of an attachment with [Attachment.get_content()](https://github.com/MrNom4ik/OneSecMailWapper/blob/main/OneSecMailWapper/mailbox.py#L22):
 ```python
 for attachment in mail.attachments:
-	print(attachment.get_content(), file=open(attachment.filename, 'wb'))
+    print(attachment.get_content(), file=open(attachment.filename, 'wb'))
 ```

@@ -2,7 +2,7 @@
 OneSecMailWapper - sync wapper over https://www.1secmail.com API temporary mail service
 # Install
 ```bash
-python setup.py insta
+python setup.py install
 ```
 # Examples
 ```py

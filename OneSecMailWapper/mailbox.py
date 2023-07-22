@@ -84,7 +84,7 @@ class Mailbox(BaseModel):
 
 class Mail(BaseModel):
     id: int
-    from_adress: str = Field(alias='from')
+    from_address: str = Field(alias='from')
     subject: str
     date: datetime
     attachments: List[Attachment]

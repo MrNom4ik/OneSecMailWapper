@@ -1,5 +1,7 @@
 # OneSecMailWapper
 OneSecMailWapper - sync wapper over https://www.1secmail.com API temporary mail service
+
+See also: https://github.com/MrNom4ik/OneSecMailAsyncWapper (async version on the `aiohttp` library)
 # Install
 ```bash
 python setup.py install
